@@ -6,9 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Database
 var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
-
+var uri = 'mongodb://heroku_g5zs1nsn:q7um57jtt9iiv7f9puc517a73m@ds123311.mlab.com:23311/heroku_g5zs1nsn';
+mongo.MongoClient.connect(uri, function (err, db) {
+    
+});
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
