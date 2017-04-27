@@ -11,15 +11,15 @@ router.get('/helloworld', function(req, res) {
 router.get('/asg1',function(req, res){
 	res.render('1');
 });
-// router.get('/userlist', function(req, res) {
-//     var db = req.db;
-//     var collection = db.get('usercollection');
-//     collection.find({},{},function(e,docs){
-//         res.render('userlist', {
-//             "userlist" : docs
-//         });
-//     });
-// });
+router.get('/userlist', function(req, res) {
+    var db = req.db;
+    var collection = db.get('usercollection');
+    collection.find({},{},function(e,docs){
+        res.render('userlist', {
+            "userlist" : docs
+        });
+    });
+});
 router.get('/newuser', function(req, res) {
     res.render('newuser', { title: 'Add New User' });
 });
